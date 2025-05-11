@@ -1,0 +1,11 @@
+.idea
+.venv
+.DS_Store
+**__pycache__/
+.env
+.dev.env
+db.sqlite3
+db_data
+media
+docker-compose.local.yml
+Dockerfile(local)
