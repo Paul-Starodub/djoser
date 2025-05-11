@@ -57,7 +57,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "djoser_learning.urls"
 
-AUTH_USER_MODEL = "users.User"
+# AUTH_USER_MODEL = "users.User"
 
 TEMPLATES = [
     {
@@ -82,8 +82,12 @@ WSGI_APPLICATION = "djoser_learning.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "HOST": os.getenv("DB_PSQL_HOST"),
+        "NAME": os.getenv("DB_PSQL_NAME"),
+        "USER": os.getenv("DB_PSQL_USER"),
+        "PASSWORD": os.getenv("DB_PSQL_PASSWORD"),
+        "PORT": os.getenv("DB_PSQL_PORT", "5432"),
     }
 }
 
